@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Alert - {{ keyword }}</title>
+</head>
+<body>
+<h1>Alert for Keyword: <span th:text="${keyword}"></span></h1>
+<p>You have received an alert for the keyword <span th:text="${keyword}"></span>.</p>
+<p>Check out the latest articles related to this keyword:</p>
+<ul>
+    <li th:each="article : ${articles}">
+        <a th:href="${article.url}" th:text="${article.title}"></a>
+    </li>
+</ul>
+<p>Best regards,<br/>The Alert System</p>
+</body>
+</html>
